@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>netcoreapp2.1;net461</TargetFrameworks>
+    <RootNamespace>AvaloniaAttachedProperty</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="**\*.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <AvaloniaResource Include="**\*.xaml">
+      <SubType>Designer</SubType>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Assets\*"/>
+  </ItemGroup>
+    
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="0.8.1-cibuild0002460-beta" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.8.1-cibuild0002460-beta" />
+  </ItemGroup>
+</Project>
